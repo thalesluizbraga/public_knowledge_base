@@ -24,24 +24,32 @@
  
 # main()
 
-plate = input('Plate:').strip()
-not_allowed_char = ['!', '.', ' ']
+def is_valid(plate):
 
+    not_allowed_char = ['!', '.', ' ']
 
-if any(char in plate for char in not_allowed_char):
-    print('Invalid')
+    if any(char in plate for char in not_allowed_char):
+        return 'Invalid'
 
-elif 2 <= len(plate) <= 6 and plate[:].isalpha():
-    print('Valid')
+    elif 2 <= len(plate) <= 6 and plate[:].isalpha():
+        return 'Valid'
 
-else:
-    if plate[:2].isalpha():
-        if plate[-1].isnumeric():
-            if plate[-2].isnumeric() and plate[-2] != '0':
-                print('Valid')
-            else:
-                print('Invalid')
-        else:
-            print('Invalid')
     else:
-        print('Invalid')
+        if plate[:2].isalpha():
+            if plate[-1].isnumeric():
+                if plate[-2].isnumeric() and plate[-2] != '0':
+                    return 'Valid'
+                else:
+                    return 'Invalid'
+            else:
+                return 'Invalid'
+        else:
+            return 'Invalid'
+
+def main():
+    plate = input('Plate:').strip()
+    print(is_valid(plate))
+
+
+if __name__ == "__main__":
+    main()
