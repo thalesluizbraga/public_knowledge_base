@@ -7,12 +7,18 @@
 # “hello”, output $0. If the greeting starts with an “h” (but not “hello”), output $20. Otherwise, output $100. 
 # Ignore any leading whitespace in the user’s greeting, and treat the user’s greeting case-insensitively.
 
-greeting = str(input('Greeting:')).lower().strip()
+def value(greeting):
+    if 'hello' in greeting:
+        return 0
+    elif greeting[0] == 'h' and greeting != 'hello':
+        return 20
+    else:
+        return 100
 
-if 'hello' in greeting:
-    print('$0')
-elif greeting[0] == 'h' and greeting != 'hello':
-    print('$20')
-else:
-    print('$100')
+def main():
+    word = str(input('Greeting:')).lower().strip()
+    print(value(word))
 
+
+if __name__ == "__main__":
+    main()
