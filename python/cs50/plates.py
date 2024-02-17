@@ -24,32 +24,47 @@
  
 # main()
 
-def is_valid(plate):
 
-    not_allowed_char = ['!', '.', ' ']
-
-    if any(char in plate for char in not_allowed_char):
+def len_plate(plate):
+    if len(plate) <= 6:
+        return plate
+    
+def contains_letter(plate):
+    count = 0
+    for i in plate:
+        if i.isalpha():
+            count += 1
+            if count >= 2:
+                return plate
+            
+def starts_with_letter(plate):
+    if plate[0:1].isalpha():
+        return plate
+    else:
         return 'Invalid'
 
-    elif 2 <= len(plate) <= 6 and plate[:].isalpha():
+def numbers_at_the_end(plate):
+    if plate[-1].isdigit() and int(plate[-2]) != 0:
         return 'Valid'
+    
+    return 'Invalid'
 
-    else:
-        if plate[:2].isalpha():
-            if plate[-1].isnumeric():
-                if plate[-2].isnumeric() and plate[-2] != '0':
-                    return 'Valid'
-                else:
-                    return 'Invalid'
-            else:
-                return 'Invalid'
-        else:
+def punctuation(plate):
+    marks = ['.', '!', '?', '...']
+    for char in plate:
+        if char in marks:
             return 'Invalid'
-
-def main():
-    plate = input('Plate:').strip()
-    print(is_valid(plate))
+    return 'Valid'
 
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    plate = input('Input a plate:').upper().strip()
+    if len_plate(plate) == 'Invalid' \
+    or contains_letter(plate) == 'Invalid' \
+    or starts_with_letter(plate) == 'Invalid' \
+    or numbers_at_the_end(plate) == 'Invalid' \
+    or punctuation(plate) == 'Invalid':    
+        print('Invalid')
+    
+    else:
+        print('Valid')
