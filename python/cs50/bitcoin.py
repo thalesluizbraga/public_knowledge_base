@@ -10,21 +10,20 @@
 import sys
 import requests
 
-def main():
+def get_btc_price(url, qtd ):
+
     try:
-        bitcoin = float(sys.argv[1])
-        if not (type(bitcoin) == float or type(bitcoin) == int):
+        if not (type(qtd) == float or type(qtd) == int):
             print('Command-line argument is not a number')
             sys.exit(1)
 
-        url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
         response = requests.get(url)
 
         if response.status_code == 200:
             json_response = response.json()
             usd_rate = json_response['bpi'] ['USD'] ['rate'].replace(',', '')
-            total = float(bitcoin) * float(usd_rate)
-            print(f"${total:,.4f}")
+            total = float(qtd) * float(usd_rate)
+            return f"${total:,.4f}"
 
         else:
             print('Error', response.status_code)
@@ -34,5 +33,8 @@ def main():
         print('Missing command-line argument')
         sys.exit(1)
 
+
 if __name__ == '__main__':
-    main()
+    url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
+    qtd = float(sys.argv[1])
+    print(get_btc_price(url, qtd))
