@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "public-knwoledge-base"
+version = "0.1.0"
+description = "Repo to record my studies and exercises in python and sql"
+authors = ["Thales <thalesluizbraga@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
