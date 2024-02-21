@@ -31,7 +31,7 @@
 # if __name__ == "__main__":
     # main()
 
-
+#%%
 import random
 
 
@@ -61,8 +61,9 @@ def generate_integer(level):
 
     return x, y
 
-def main():
-    level = get_level()
+
+def calculate_score(x,y):
+    
     score = 0
 
     for i in range(10):
@@ -94,8 +95,14 @@ def main():
                     print('EEE')
 
 
-    print('Score: ', score)
-
+    return score
+    
+    
 if __name__ == '__main__':
-    main()
+    level = get_level()
+    x,y = generate_integer(level)
+    score = calculate_score(x,y)
+    print(f'Score: {score} out of 10')
+    
 
+# %%
