@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 babel = "^2.14.0"
+pandas = "^2.2.1"
+black = "^24.2.0"
 
 
 [build-system]
