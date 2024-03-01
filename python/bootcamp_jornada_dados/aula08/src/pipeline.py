@@ -22,18 +22,20 @@ def calculate_total_sales_col(df: pd.DataFrame) -> pd.DataFrame:
 def load_df(df: pd.DataFrame, path_output: str ,format_output: list):
     for formato in format_output:
         if formato == 'csv':
-            df = df.to_csv(f'{path_output}data.csv', index=False)
             print('Csv file saved successfully.')
+            return df.to_csv(f'{path_output}data.csv', index=False)
+            
         if formato == 'parquet':
-            df = df.to_parquet(f'{path_output}data.parquet', index=False)
             print('Parquet file saved successfully.')
-
+            return df.to_parquet(f'{path_output}data.parquet', index=False)
+            
 
 if __name__ == '__main__':
     path = 'C:/Users/JHS/Documents/repos/public_knwoledge_base/python/bootcamp_jornada_dados/aula08/data'
-    path_output = 'C:/Users/JHS/Documents/repos/public_knwoledge_base/python/bootcamp_jornada_dados/aula08/data'
+    path_output = 'C:/Users/JHS/Documents/repos/public_knwoledge_base/python/bootcamp_jornada_dados/aula08/data/'
     df_list = extract_json(path)
     df = concat_json(df_list)
     df = calculate_total_sales_col(df)
-    print(load_df(df, path_output, 'csv' ))
+    print(load_df(df, path_output, ['parquet'] ))
+    
 # %%
