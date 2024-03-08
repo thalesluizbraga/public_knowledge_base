@@ -48,5 +48,3 @@ df_dict = df.to_dict()
 #print(tabulate(df_dict, headers='keys', tablefmt='grid'))
 #print(tabulate(df, headers='keys', tablefmt='grid'))
 
-
-# %%
