@@ -8,3 +8,12 @@ Possiveis Erros
 name
   Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='arbok', input_type=str]
     For further information visit https://errors.pydantic.dev/2.6/v/int_parsing
+
+    voltar nos 35m da aula 18
+
+estudar MVC (model, view, control)
+json >> dict >> lista/banco/etc
+	
+backfill entender o que e
+
+salvar json bruto pra preservar os dados brutos
