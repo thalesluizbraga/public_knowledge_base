@@ -1,4 +1,28 @@
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/75149d37-58c5-4e57-833a-62c9c8f03039/3859aae4-d37f-4ddc-a9f7-cea7bea5d48c/Untitled.png)
+Estrutura Tipagem com Pydant:
+  - importar BaseModel do Pydantic
+  - criar classe da tabela instanciando dentro dela a clase BaseModel do Pydantic
+    - tipar dados
+    - class_confi: orm = True
+
+Estrutura get API:
+  - importar lib requests
+  - fazer o get com a url da api
+  - trazer o json que veio no get para uma response
+  - pegar as partes que importam e depois trabalhar com dicionarios ou listas (json >> dict >> lista/banco/etc)
+
+
+
+MVC (Model, View, Controller)
+  - 
+  - 
+  - 
+
+
+
+
+
+
+
 
 Possiveis Erros 
 
@@ -11,9 +35,15 @@ name
 
     voltar nos 35m da aula 18
 
-estudar MVC (model, view, control)
-json >> dict >> lista/banco/etc
-	
-backfill entender o que e
+MVC (model, view, control) no caso do projeto:
+  - db.py > deixa os comandos de engine e acessoa o banco apartado do model por questao de seguranca
+  - model > banco de dados, definicoes das classes das tabelas
+  - view > schema (visao de como os dados chegam, poderia ser um dashboard tambem)
+  - controller
+  - arquivo main que roda tudo isso
 
+	
+
+obs:
+backfill - alimentar uma base retroativamente por adicao de coluna por exemplo
 salvar json bruto pra preservar os dados brutos
